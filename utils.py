@@ -1,15 +1,9 @@
 #!/usr/bin/python
-#pylint: disable=c,w 
 ################################################################################
 #		Author: 				Patrick Earl
-#		Creation Date:			November 28, 2016 
-#		Due Date:				December 5, 2016 
-#		Course:					CSC 328 - Network Programming
-#		Professor Name:			Dr. Frye
-#		Assignemnt:				Final Project
 #		Filename:				utils.py
 #		Purpose:				Functions for sending and recving messages
-#					in full
+#								in full
 ################################################################################
 
 import socket 

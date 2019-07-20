@@ -1,12 +1,6 @@
 #!/usr/bin/python
-#pylint: disable=c,w 
 ################################################################################
 #		Author: 				Patrick Earl
-#		Creation Date:			November 27, 2016 
-#		Due Date:				December 5, 2016 
-#		Course:					CSC 328 - Network Programming
-#		Professor Name:			Dr. Frye
-#		Assignemnt:				Final Project
 #		Filename:				server.py
 #		Purpose:				Client application that connects to the chat
 #					server. Sends commands to the server and is able to send
@@ -19,28 +13,29 @@
 
 import socket # Sockets
 import select # We can cleanly select which stream to listen too
-import sys # To get command line arugments
+import sys # To get command line arguments 
 from utils import writemsg, readmsg # Utils read and write functions
 
 # Entry point to the program... 
 def main():	
-	port_Number = socket.ntohs(55510) # Default Port Number
+	# port_Number = socket.ntohs(55510) # Default Port Number
 
-	# Command line arugments get processed here
+	# Command line arguments get processed here
 	if len(sys.argv) == 3: # If a port name and hostname is passed
 		hostname = sys.argv[1]
-		port_Number = socket.htons(int(sys.argv[2]))
+		port_number = int(sys.argv[2])
+		# port_Number = socket.htons(int(sys.argv[2]))
 	
 	elif len(sys.argv) == 2: # Hostname passed 
 		hostname = sys.argv[1]
 	
-	else: # Incorrect number of arugments, show usage cause 
+	else: # Incorrect number of arguments, show usage cause 
 		print("Error, Incorrect number of arguments!")
 		print("Usage: %s <hostname> [port number]" % sys.argv[0])
 		sys.exit(-1)
 	
 	print("Port Number: %i" % port_Number)
-	print("NTOHS: %i" % socket.ntohs(port_Number))
+	# print("NTOHS: %i" % socket.ntohs(port_Number))
 
 	# Create the socket (IPv4, TCP)
 

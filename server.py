@@ -1,12 +1,6 @@
 #!/usr/bin/python
-#pylint: disable=C, w
 ################################################################################
 #		Author: 				Patrick Earl
-#		Creation Date:			November 21, 2016 
-#		Due Date:				December 5, 2016 
-#		Course:					CSC 328 - Network Programming
-#		Professor Name:			Dr. Frye
-#		Assignemnt:				Final Project
 #		Filename:				server.py
 #		Purpose:				A server application that acts a chat server
 #							waits for incoming messages and repeats them to all 
@@ -40,16 +34,17 @@ SHUTDOWN = False # When the server is told to shutdown this will be set to True
 def main(): # Program Entry 
 
 	# Port number used if user doesn't specify at start-up  
-	port_Number = socket.htons(55510)
+	# port_Number = socket.htons(55510)
 	global SHUTDOWN
 	
 	# Check if the user passed an argument, if its more than one
 	# a port number was passed.
 	if len(sys.argv) > 1:
-		port_Number = socket.htons(int(sys.argv[1]))
+		port_number = int(sys.argv[1])
+		# port_Number = socket.htons(int(sys.argv[1]))
 	
 	print("Port number: %i" % port_Number)
-	print("NTOHS: %i" % socket.htons(port_Number))
+	# print("NTOHS: %i" % socket.htons(port_Number))
 
 	#Create the socket, bind, and make the passive passive
 	try:
